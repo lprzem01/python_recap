@@ -32,12 +32,12 @@ df['Feature19'] = pd.Categorical(df['Feature19'], categories=order19, ordered=Tr
 # check if the change was successful
 print(df['Feature19'].dtype)
 
+# %%
 # visualize the distribution of Feature4 and Feature19
-x = df['Feature4']
-y = df['Feature4'].value_counts().sort_index()
-
+import matplotlib.pyplot as plt
 print(df.iloc[:, 3])
 values = df.iloc[:, 3].value_counts().sort_index()
 print(values)
-
+values.plot.bar(title='Distribution of Feature4')
 values.plot(kind='bar', title='Distribution of Feature4')
+plt.show()
